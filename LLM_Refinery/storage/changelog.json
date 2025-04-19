@@ -1,0 +1,26 @@
+{
+    "d0b167d3-a97b-4b87-b880-13bf48caa6bf": {
+        "timestamp": "2025-04-17T04:34:39.655236",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: To transcribe.\nUse a tone that is Formal, and a style that feels academic.\nWrite as if you are a student, addressing the audience in the context of legal.\n\nOriginal message:\nWrite this down",
+        "output": "[MOCK LLM RESPONSE]\n\n\ud83e\udde0 Original Message:\nRewrite the following message with the goal of: To transcribe.\nUse a tone that is Formal, and a style that feels academic.\nWrite as if you are a student, addressing the audience in the context of legal.\n\nOriginal message:\nWrite this down\n\n\ud83c\udfaf Goal: \n\ud83c\udfa4 Tone: neutral\n\ud83c\udfa8 Style: \n\ud83e\uddcd Persona: \n\ud83c\udf10 Domain: \n\n\ud83d\udd01 \u2192 This is where the rewritten version would appear if the LLM API were live.\n(Simulated response using agent parameters.)",
+        "agents": [
+            "ToneAgent",
+            "StyleAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "7bfbf24a-1558-4437-9c2a-317dfd00b86c": {
+        "timestamp": "2025-04-17T15:28:28.422022",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: professional tone.\nUse a tone that is funny, and a style that feels creative.\nWrite as if you are a CEO, addressing the audience in the context of construction.\n\nOriginal message:\nwe are at work",
+        "output": "[MOCK LLM RESPONSE]\n\n\ud83e\udde0 Original Message:\nRewrite the following message with the goal of: professional tone.\nUse a tone that is funny, and a style that feels creative.\nWrite as if you are a CEO, addressing the audience in the context of construction.\n\nOriginal message:\nwe are at work\n\n\ud83c\udfaf Goal: \n\ud83c\udfa4 Tone: neutral\n\ud83c\udfa8 Style: \n\ud83e\uddcd Persona: \n\ud83c\udf10 Domain: \n\n\ud83d\udd01 \u2192 This is where the rewritten version would appear if the LLM API were live.\n(Simulated response using agent parameters.)",
+        "agents": [
+            "ToneAgent",
+            "StyleAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    }
+}
