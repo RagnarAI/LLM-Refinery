@@ -1,16 +1,11 @@
-from LLM_Refinery.core.llm_agent_core import LLMRewriteCore
+# LLM_Refinery/agents/tone_agent.py
+
+from LLM_Refinery.core.llm_agent_core import call_llm
 
 class ToneAgent:
-    def __init__(self):
-        self.name = "ToneAgent"
-        self.rewriter = LLMRewriteCore()
+    def __init__(self, tone: str):
+        self.tone = tone
 
-    def run(self, text: str, context: dict = {}) -> str:
-        return self.rewriter.rewrite(
-            text=text,
-            goal=context.get("goal", ""),
-            tone=context.get("tone", "neutral"),
-            style=context.get("style", ""),
-            persona=context.get("persona", ""),
-            domain=context.get("domain", "")
-        )
+    def process(self, text: str) -> str:
+        prompt = f"Rewrite the following in a {self.tone} tone:\n\n{text}"
+        return call_llm(prompt, system_prompt="You adjust tone in writing.")

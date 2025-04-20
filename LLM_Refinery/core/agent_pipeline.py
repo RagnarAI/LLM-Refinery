@@ -1,3 +1,5 @@
+# LLM_Refinery/core/agent_pipeline.py
+
 from LLM_Refinery.agents.prompt_intake_agent import PromptIntakeAgent
 from LLM_Refinery.agents.context_analyzer_agent import ContextAnalyzerAgent
 from LLM_Refinery.agents.prompt_refiner_agent import PromptRefinerAgent
@@ -16,15 +18,19 @@ from LLM_Refinery.memory.session_manager import SessionManager
 from LLM_Refinery.storage.change_log_db import ChangeLogDB
 from LLM_Refinery.storage.model_registry import ModelRegistry
 
-AGENT_MAP = {
-    "GrammarAgent": GrammarAgent(),
-    "VocabularyAgent": VocabularyAgent(),
-    "ToneAgent": ToneAgent(),
-    "StyleAgent": StyleAgent(),
-    "CompressionAgent": CompressionAgent()
-}
 
-def run_pipeline(user_input: dict, session_id="session_001"):
+
+def run_pipeline(config, session_id="session_001"):
+    user_input = config["original_input"]
+
+    # ✅ Move AGENT_MAP here, after config is available
+    AGENT_MAP = {
+        "GrammarAgent": GrammarAgent(),
+        "VocabularyAgent": VocabularyAgent(),
+        "ToneAgent": ToneAgent(config.get("tone", "neutral")),
+        "StyleAgent": StyleAgent(),
+        "CompressionAgent": CompressionAgent()
+    }
 
     # === Initialize system components ===
     memory = MemoryHandler()
@@ -32,10 +38,13 @@ def run_pipeline(user_input: dict, session_id="session_001"):
     changelog = ChangeLogDB()
     registry = ModelRegistry()
 
+    # ...rest of pipeline...
+
+
     session.create_session(session_id)
 
     # === Intake, Context, Refine Prompt ===
-    intake = PromptIntakeAgent().run(user_input)
+    intake = PromptIntakeAgent().run(config)
     context = ContextAnalyzerAgent().run(intake)
     refined_prompt = PromptRefinerAgent().run(context)
 

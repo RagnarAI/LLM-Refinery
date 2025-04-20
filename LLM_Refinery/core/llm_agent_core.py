@@ -1,18 +1,31 @@
-class LLMRewriteCore:
-    def __init__(self, model="gpt-3.5-turbo", temperature=0.7, max_tokens=300):
-        self.model = model
-        self.temperature = temperature
-        self.max_tokens = max_tokens
+# LLM_Refinery/core/llm_agent_core.py
 
-    def rewrite(self, text: str, goal: str, tone: str, style: str, persona: str, domain: str) -> str:
-        return (
-            f"[MOCK LLM RESPONSE]\n\n"
-            f"🧠 Original Message:\n{text}\n\n"
-            f"🎯 Goal: {goal}\n"
-            f"🎤 Tone: {tone}\n"
-            f"🎨 Style: {style}\n"
-            f"🧍 Persona: {persona}\n"
-            f"🌐 Domain: {domain}\n\n"
-            f"🔁 → This is where the rewritten version would appear if the LLM API were live.\n"
-            f"(Simulated response using agent parameters.)"
-        )
+import os
+import requests
+
+BRANIAC_API = os.getenv("BRANIAC_API", "http://localhost:8000/generate")
+BRANIAC_TOKEN = os.getenv("BRANIAC_TOKEN", "mistral-peter")
+
+def call_llm(prompt: str, system_prompt: str = "You are a helpful assistant.") -> str:
+    headers = {
+        "Authorization": f"Bearer {BRANIAC_TOKEN}",
+        "Content-Type": "application/json"
+    }
+
+    data = {
+        "model": "mistral-7b",
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.7,
+        "max_tokens": 300
+    }
+
+    try:
+        response = requests.post(BRANIAC_API, headers=headers, json=data)
+        response.raise_for_status()
+        return response.json()["choices"][0]["message"]["content"]
+    except Exception as e:
+        print(f"⚠️ LLM Core Error: {e}")
+        return "[ERROR] Could not reach Braniac"
