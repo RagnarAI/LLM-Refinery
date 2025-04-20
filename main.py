@@ -1,43 +1,48 @@
+# main.py (frontend entry point)
+from fastapi import FastAPI, Request, Form
+from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from LLM_Refinery.core.agent_pipeline import run_pipeline
+import uvicorn
 
-def get_user_input():
-    print("=== Welcome to the LLM Refinery Interface ===")
-    print("Customize how you'd like the model to behave:\n")
+app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
-    user_prompt = input("Enter your raw text or prompt:\n> ")
+@app.get("/", response_class=HTMLResponse)
+def dashboard(request: Request):
+    return templates.TemplateResponse("dashboard.html", {"request": request})
 
-    goal = input("\nGoal? (e.g., summarize, clarify, rewrite, professional tone):\n> ")
-    tone = input("Tone? (e.g., formal, casual, assertive):\n> ")
-    style = input("Style? (e.g., academic, creative, bullet points):\n> ")
-    character = input("Persona? (e.g., teacher, lawyer, CEO):\n> ")
-    domain = input("Domain? (e.g., marketing, legal, business):\n> ")
+@app.get("/config", response_class=HTMLResponse)
+def config_page(request: Request):
+    return templates.TemplateResponse("config.html", {"request": request})
 
-    return {
-        "original_input": user_prompt,
+@app.post("/run", response_class=HTMLResponse)
+def run_refinery(
+    request: Request,
+    original_input: str = Form(...),
+    goal: str = Form(...),
+    tone: str = Form(...),
+    style: str = Form(...),
+    character: str = Form(...),
+    domain: str = Form(...)
+):
+    config = {
+        "original_input": original_input,
         "goal": goal,
         "tone": tone,
         "style": style,
         "character": character,
         "domain": domain
     }
+    response, evaluation, feedback = run_pipeline(config)
+    return templates.TemplateResponse("dashboard.html", {
+        "request": request,
+        "result": response,
+        "evaluation": evaluation,
+        "feedback": feedback
+    })
 
 if __name__ == "__main__":
-    while True:
-        user_config = get_user_input()
-        response, evaluation, feedback = run_pipeline(user_config)
-
-        print("\n=== Final Output ===\n")
-        print(response)
-
-        print("\n=== Evaluation ===")
-        print(evaluation)
-
-        print("\n=== Proxy Agent Feedback ===")
-        print(feedback)
-
-        again = input("\nWould you like to run another task? (y/n): ")
-        if again.lower() != "y":
-            print("\nGoodbye 👋")
-            break
-
-
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

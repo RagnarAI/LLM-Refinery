@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>🔁 Live Pipeline Output</h2>
+
+{% if result %}
+    <h3>💡 Final Output</h3>
+    <pre>{{ result }}</pre>
+
+    <h3>📊 Evaluation</h3>
+    <pre>{{ evaluation }}</pre>
+
+    <h3>🗣️ Proxy Feedback</h3>
+    <pre>{{ feedback }}</pre>
+{% else %}
+    <p>No output yet. Try submitting a new run on the <a href="/config">Config page</a>.</p>
+{% endif %}
+{% endblock %}

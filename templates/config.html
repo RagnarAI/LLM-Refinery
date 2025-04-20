@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>⚙️ Configure Agent Input</h2>
+<form method="post" action="/run">
+    <label>Raw Prompt:</label><br>
+    <textarea name="original_input" rows="4" cols="60" required></textarea><br><br>
+
+    <label>Goal:</label><br>
+    <input name="goal" required><br><br>
+
+    <label>Tone:</label><br>
+    <input name="tone" required><br><br>
+
+    <label>Style:</label><br>
+    <input name="style" required><br><br>
+
+    <label>Persona:</label><br>
+    <input name="character" required><br><br>
+
+    <label>Domain:</label><br>
+    <input name="domain" required><br><br>
+
+    <button type="submit">▶️ Run LLM Refinery</button>
+</form>
+{% endblock %}
