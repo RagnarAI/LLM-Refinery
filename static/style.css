@@ -1,53 +1,57 @@
 :root {
-    --bg: #121212;
-    --text: #eaeaea;
-    --accent: #61dafb;
-}
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, sans-serif;
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --accent-color: #61dafb;
+    --input-bg: #1e1e1e;
+    --input-border: #444;
+  }
+  
+  body.dark {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 2rem;
-}
-
-header {
-    background: #5c0000;
+  }
+  
+  header.dark {
+    background: #1f1f1f;
     padding: 1rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid #333;
-}
-
-header h1 {
-    color: var(--accent);
-}
-
-nav a {
-    color: var(--accent);
+  }
+  
+  header h1.dark {
+    color: var(--accent-color);
+  }
+  
+  nav a.dark {
+    color: var(--accent-color);
     margin-right: 1rem;
     text-decoration: none;
-}
-
-input, textarea {
-    background-color: #2a2a2a;
-    color: var(--text);
-    border: 1px solid #555;
+  }
+  
+  input.dark, textarea.dark {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
     padding: 0.5rem;
     width: 100%;
-}
-
-button {
-    background: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  button.dark {
+    background: var(--accent-color);
     color: black;
     padding: 0.5rem 1rem;
     border: none;
-    margin-top: 1rem;
     cursor: pointer;
-}
-
-pre {
+  }
+  
+  pre.dark {
     background: #1e1e1e;
+    color: var(--text-color);
     padding: 1rem;
     border-radius: 5px;
     overflow-x: auto;
-}
+  }
+  
