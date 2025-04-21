@@ -1,48 +1,56 @@
-# main.py (frontend entry point)
+
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from LLM_Refinery.core.agent_pipeline import run_pipeline
-import uvicorn
+from uuid import uuid4
+import os
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
+@app.get("/live", response_class=HTMLResponse)
+async def live_dashboard(request: Request):
+    return templates.TemplateResponse("live_dashboard.html", {"request": request})
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/dashboard", response_class=HTMLResponse)
 def dashboard(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
+from fastapi.responses import RedirectResponse  # Add to your imports if not already
 
-@app.get("/config", response_class=HTMLResponse)
-def config_page(request: Request):
-    return templates.TemplateResponse("config.html", {"request": request})
+@app.get("/", response_class=HTMLResponse)
+def root():
+    return RedirectResponse(url="/dashboard")
 
-@app.post("/run", response_class=HTMLResponse)
-def run_refinery(
-    request: Request,
-    original_input: str = Form(...),
-    goal: str = Form(...),
-    tone: str = Form(...),
-    style: str = Form(...),
-    character: str = Form(...),
-    domain: str = Form(...)
-):
-    config = {
-        "original_input": original_input,
+@app.post("/run_pipeline", response_class=HTMLResponse)
+def run_pipeline_htmx(request: Request,
+                      prompt: str = Form(...),
+                      goal: str = Form(...),
+                      tone: str = Form(...),
+                      style: str = Form(...),
+                      persona: str = Form(...),
+                      domain: str = Form(...)):
+
+    user_input = {
+        "original_input": prompt,
         "goal": goal,
         "tone": tone,
         "style": style,
-        "character": character,
+        "character": persona,
         "domain": domain
     }
-    response, evaluation, feedback = run_pipeline(config)
-    return templates.TemplateResponse("dashboard.html", {
-        "request": request,
-        "result": response,
-        "evaluation": evaluation,
-        "feedback": feedback
-    })
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    # Modified pipeline to yield agent name and output at each step
+    output_blocks = run_pipeline(user_input, yield_mode=True)
+
+    blocks = ""
+    for name, output in output_blocks:
+        blocks += f"""
+        <div class='agent-output'>
+            <h4>{name}</h4>
+            <pre>{output}</pre>
+        </div>
+        """
+
+    return HTMLResponse(blocks)

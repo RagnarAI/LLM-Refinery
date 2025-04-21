@@ -54,4 +54,22 @@
     border-radius: 5px;
     overflow-x: auto;
   }
+  .agent-block {
+    background-color: #1e1e1e;
+    color: #eaeaea;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    border-left: 4px solid #61dafb;
+    border-radius: 5px;
+  }
+  
+  .agent-block h3 {
+    color: #61dafb;
+    margin-bottom: 0.5rem;
+  }
+  
+  textarea {
+    width: 100%;
+  }
   

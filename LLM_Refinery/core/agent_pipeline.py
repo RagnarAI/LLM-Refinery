@@ -22,6 +22,42 @@ from LLM_Refinery.storage.model_registry import ModelRegistry
 
 def run_pipeline(config, session_id="session_001"):
     user_input = config["original_input"]
+def live_run_pipeline(config):
+    user_input = config["original_input"]
+
+    AGENT_MAP = {
+        "GrammarAgent": GrammarAgent(),
+        "VocabularyAgent": VocabularyAgent(),
+        "ToneAgent": ToneAgent(config.get("tone", "neutral")),
+        "StyleAgent": StyleAgent(),
+        "CompressionAgent": CompressionAgent()
+    }
+
+    # === Intake, Context, Refine Prompt ===
+    intake = PromptIntakeAgent().run(config)
+    yield ("PromptIntakeAgent", str(intake))
+
+    context = ContextAnalyzerAgent().run(intake)
+    yield ("ContextAnalyzerAgent", str(context))
+
+    refined_prompt = PromptRefinerAgent().run(context)
+    yield ("PromptRefinerAgent", refined_prompt)
+
+    # === Select and Run Active Agents ===
+    selected_agents = AgentComposer().select_agents(context)
+
+    current_output = refined_prompt
+    revision_stack = []
+
+    for agent_name in selected_agents:
+        agent = AGENT_MAP.get(agent_name)
+        if agent:
+            current_output = agent.run(current_output)
+            revision_stack.append(current_output)
+            yield (agent_name, current_output)
+
+    final_response = ResponseSynthesizerAgent().run(revision_stack)
+    yield ("ResponseSynthesizerAgent", final_response)
 
     # ✅ Move AGENT_MAP here, after config is available
     AGENT_MAP = {
