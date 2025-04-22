@@ -1,40 +1,40 @@
+from LLM_Refinery.core.llm_agent_core import call_llm
+import json
+
 class AgentComposer:
-  def __init__(self):
-      self.name = "AgentComposer"
+    def __init__(self):
+        self.name = "AgentComposer"
 
-  def select_agents(self, context_enriched_prompt: dict) -> list:
-      goal = context_enriched_prompt.get("goal", "").lower()
-      tone = context_enriched_prompt["context"].get("tone", "").lower()
-      style = context_enriched_prompt["context"].get("style", "").lower()
-      domain = context_enriched_prompt["context"].get("domain", "").lower()
+    def select_agents(self, context_enriched_prompt: dict) -> list:
+        context_summary = json.dumps(context_enriched_prompt, indent=2)
 
-      agents_to_run = []
+        prompt = f"""
+You are an AI system managing a refinement pipeline of text agents.
 
-      # Tone Agent Triggers
-      if any(kw in goal for kw in ["tone", "emotion", "conviction", "passion", "confident"]) or \
-         any(kw in tone for kw in ["confident", "friendly", "formal", "assertive", "casual", "inspirational"]):
-          agents_to_run.append("ToneAgent")
+Given the following user input and its context, return a list of agents (from the options below) that should process it:
+- GoalAgent
+- ToneAgent
+- GrammarAgent
+- VocabularyAgent
+- CompressionAgent
+- StyleAgent
 
-      # Grammar Agent Triggers
-      if any(kw in goal for kw in ["grammar", "correct", "clean", "fix typos", "refine"]) or \
-         any(kw in tone for kw in ["professional", "polished"]):
-          agents_to_run.append("GrammarAgent")
 
-      # Vocabulary Agent Triggers
-      if any(kw in goal for kw in ["vocabulary", "simplify", "make clear", "clarify"]) or \
-         any(kw in domain for kw in ["public", "speech", "message", "story"]):
-          agents_to_run.append("VocabularyAgent")
+Only return a JSON list of the agents you would activate. No explanation needed.
 
-      # Compression Agent Triggers
-      if any(kw in goal for kw in ["shorten", "summarize", "compress"]):
-          agents_to_run.append("CompressionAgent")
+Context:
+{context_summary}
+        """
 
-      # Style Agent Triggers
-      if any(kw in style for kw in ["bullet", "creative", "wise", "structured", "storytelling", "poetic", "academic", "relaxed"]):
-          agents_to_run.append("StyleAgent")
+        system = "You are a smart task router. You decide which text-refinement agents to activate for a user’s prompt."
+        
+        try:
+            response = call_llm(prompt, system_prompt=system)
+            agents = json.loads(response)
+            if isinstance(agents, list):
+                return agents
+        except Exception as e:
+            print(f"[⚠️ AgentComposer Error] {e}")
 
-      # Fallback: default to GrammarAgent if nothing matches
-      if not agents_to_run:
-          agents_to_run.append("GrammarAgent")
-
-      return agents_to_run
+        # Fallback
+        return ["GrammarAgent"]

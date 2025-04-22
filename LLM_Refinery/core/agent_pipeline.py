@@ -12,82 +12,43 @@ from LLM_Refinery.agents.compression_agent import CompressionAgent
 from LLM_Refinery.agents.response_synthesizer_agent import ResponseSynthesizerAgent
 from LLM_Refinery.agents.evaluation_agent import EvaluationAgent
 from LLM_Refinery.agents.proxy_user_agent import ProxyUserAgent
-
+from LLM_Refinery.agents.goal_agent import GoalAgent
 from LLM_Refinery.memory.memory_handler import MemoryHandler
 from LLM_Refinery.memory.session_manager import SessionManager
 from LLM_Refinery.storage.change_log_db import ChangeLogDB
 from LLM_Refinery.storage.model_registry import ModelRegistry
 
 
-
-def run_pipeline(config, session_id="session_001"):
-    user_input = config["original_input"]
-def live_run_pipeline(config):
-    user_input = config["original_input"]
-
-    AGENT_MAP = {
-        "GrammarAgent": GrammarAgent(),
-        "VocabularyAgent": VocabularyAgent(),
-        "ToneAgent": ToneAgent(config.get("tone", "neutral")),
-        "StyleAgent": StyleAgent(),
-        "CompressionAgent": CompressionAgent()
-    }
-
-    # === Intake, Context, Refine Prompt ===
-    intake = PromptIntakeAgent().run(config)
-    yield ("PromptIntakeAgent", str(intake))
-
-    context = ContextAnalyzerAgent().run(intake)
-    yield ("ContextAnalyzerAgent", str(context))
-
-    refined_prompt = PromptRefinerAgent().run(context)
-    yield ("PromptRefinerAgent", refined_prompt)
-
-    # === Select and Run Active Agents ===
-    selected_agents = AgentComposer().select_agents(context)
-
-    current_output = refined_prompt
-    revision_stack = []
-
-    for agent_name in selected_agents:
-        agent = AGENT_MAP.get(agent_name)
-        if agent:
-            current_output = agent.run(current_output)
-            revision_stack.append(current_output)
-            yield (agent_name, current_output)
-
-    final_response = ResponseSynthesizerAgent().run(revision_stack)
-    yield ("ResponseSynthesizerAgent", final_response)
-
-    # ✅ Move AGENT_MAP here, after config is available
-    AGENT_MAP = {
-        "GrammarAgent": GrammarAgent(),
-        "VocabularyAgent": VocabularyAgent(),
-        "ToneAgent": ToneAgent(config.get("tone", "neutral")),
-        "StyleAgent": StyleAgent(),
-        "CompressionAgent": CompressionAgent()
-    }
-
-    # === Initialize system components ===
+def run_pipeline(config: dict, session_id="session_001", yield_mode=False):
     memory = MemoryHandler()
     session = SessionManager()
     changelog = ChangeLogDB()
     registry = ModelRegistry()
 
-    # ...rest of pipeline...
-
-
     session.create_session(session_id)
 
-    # === Intake, Context, Refine Prompt ===
+    AGENT_MAP = {
+    "GoalAgent": GoalAgent(config.get("goal", "refine")),
+    "GrammarAgent": GrammarAgent(),
+    "VocabularyAgent": VocabularyAgent(),
+    "ToneAgent": ToneAgent(config.get("tone", "neutral")),
+    "StyleAgent": StyleAgent(),
+    "CompressionAgent": CompressionAgent()
+}
+
+
+    # === Intake, Context, Refine ===
     intake = PromptIntakeAgent().run(config)
     context = ContextAnalyzerAgent().run(intake)
     refined_prompt = PromptRefinerAgent().run(context)
 
-    # === Decide agents to activate ===
+    if yield_mode:
+        yield ("PromptIntakeAgent", str(intake))
+        yield ("ContextAnalyzerAgent", str(context))
+        yield ("PromptRefinerAgent", refined_prompt)
+
     selected_agents = AgentComposer().select_agents(context)
 
-    # === Apply selected refinement agents ===
     current_output = refined_prompt
     revision_stack = []
 
@@ -97,14 +58,17 @@ def live_run_pipeline(config):
             current_output = agent.run(current_output)
             revision_stack.append(current_output)
 
-    # === Synthesize final version ===
+            if yield_mode:
+                yield (agent_name, current_output)
+
     final_response = ResponseSynthesizerAgent().run(revision_stack)
 
-    # === Evaluate result ===
+    if yield_mode:
+        yield ("ResponseSynthesizerAgent", final_response)
+
     evaluation = EvaluationAgent().run(refined_prompt, final_response, context["goal"])
     proxy_feedback = ProxyUserAgent().run(evaluation)
 
-    # === Log everything ===
     changelog_id = changelog.log_change(
         session_id=session_id,
         input_text=refined_prompt,
@@ -117,11 +81,5 @@ def live_run_pipeline(config):
     session.log_interaction(session_id, refined_prompt, final_response)
     memory.store("last_result", final_response)
 
-    # === Optional loop if failed ===
-    if not proxy_feedback["approved"]:
-        print(f"\n⚠️  Output rejected by proxy agent: {proxy_feedback['feedback']}")
-        print(f"Change Log ID: {changelog_id}")
-    else:
-        print(f"\n✅ Final Output Approved! Saved to Change Log.\nChange Log ID: {changelog_id}")
-
-    return final_response, evaluation, proxy_feedback
+    if not yield_mode:
+        return final_response, evaluation, proxy_feedback

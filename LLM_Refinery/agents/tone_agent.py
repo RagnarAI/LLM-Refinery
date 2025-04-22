@@ -6,6 +6,9 @@ class ToneAgent:
     def __init__(self, tone: str):
         self.tone = tone
 
+    def run(self, text: str) -> str:
+        return self.process(text)
+
     def process(self, text: str) -> str:
         prompt = f"Rewrite the following in a {self.tone} tone:\n\n{text}"
         return call_llm(prompt, system_prompt="You adjust tone in writing.")

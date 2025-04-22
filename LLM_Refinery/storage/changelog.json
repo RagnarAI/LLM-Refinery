@@ -44,5 +44,357 @@
         ],
         "evaluation_score": 5.0,
         "approved": false
+    },
+    "7111ca7a-5f8e-439d-b467-331ee64fc57c": {
+        "timestamp": "2025-04-21T06:01:25.248961",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite this argument..\nUse a tone that is positive, and a style that feels critical.\nWrite as if you are a Optimistic, addressing the audience in the context of Public hearing.\n\nOriginal message:\nQuantum physics is going to one day change the world or destroy it.",
+        "output": "Rewrite the following message with the goal of: Rewrite this argument..\nUse a tone that is positive, and a style that feels critical.\nWrite as if you are a Optimistic, addressing the audience in the context of Public hearing.\n\nOriginal message:\nQuantum physics is going to one day change the world or destroy it.",
+        "agents": [
+            "VocabularyAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "489f56dc-92d3-48ce-932f-104432da978b": {
+        "timestamp": "2025-04-21T06:29:52.689951",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is Sarcasm, and a style that feels AI Response.\nWrite as if you are a human, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nSentient AI will one day be very real and humans will wonder why they needed it in the first place.",
+        "output": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is Sarcasm, and a style that feels AI Response.\nWrite as if you are a human, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nSentient AI will one day be very real and humans will wonder why they needed it in the first place.",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "5abb24a4-2eff-486a-9bd5-f7537ca1b3b7": {
+        "timestamp": "2025-04-21T06:30:31.129024",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is Sarcasm, and a style that feels AI Response.\nWrite as if you are a human, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nSentient AI will one day be very real and humans will wonder why they needed it in the first place.",
+        "output": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is Sarcasm, and a style that feels AI Response.\nWrite as if you are a human, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nSentient AI will one day be very real and humans will wonder why they needed it in the first place.",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "44b57252-f546-4878-b7b5-0ea0ae0683d3": {
+        "timestamp": "2025-04-21T06:30:55.010912",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is Sarcasm, and a style that feels AI Response.\nWrite as if you are a human, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nSentient AI will one day be very real and humans will wonder why they needed it in the first place.",
+        "output": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is Sarcasm, and a style that feels AI Response.\nWrite as if you are a human, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nSentient AI will one day be very real and humans will wonder why they needed it in the first place.",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "c2d27494-a90a-47f7-b4de-9a8ebb0f89f3": {
+        "timestamp": "2025-04-21T06:44:18.524786",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is positive, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nIf AI Agents become Sentient, will they need Human companions for lonliness",
+        "output": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is positive, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nIf AI Agents become Sentient, will they need Human companions for lonliness",
+        "agents": [
+            "VocabularyAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "6997b367-55d5-4767-98fb-338c1ae5e716": {
+        "timestamp": "2025-04-21T06:44:26.967186",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is positive, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nIf AI Agents become Sentient, will they need Human companions for lonliness",
+        "output": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is positive, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nIf AI Agents become Sentient, will they need Human companions for lonliness",
+        "agents": [
+            "VocabularyAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "73739c9c-ed74-4a97-ac0f-48dbf82d1a55": {
+        "timestamp": "2025-04-21T06:47:21.253724",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is positive, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nIf AI Agents become Sentient, will they need Human companions for lonliness",
+        "output": "Rewrite the following message with the goal of: Restructure to be true.\nUse a tone that is positive, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nIf AI Agents become Sentient, will they need Human companions for lonliness",
+        "agents": [
+            "VocabularyAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "858f3842-af28-4b32-ae7a-9c07ec53fa21": {
+        "timestamp": "2025-04-21T06:59:32.567920",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Motivate developers.\nUse a tone that is Inspirational, and a style that feels Speech-like.\nWrite as if you are a Visionary Leader, addressing the audience in the context of Technology.\n\nOriginal message:\nWrite a powerful speech to motivate AI developers",
+        "output": "[ERROR] Could not reach Braniac",
+        "agents": [
+            "ToneAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "cba47b03-94ea-4459-9175-4d36f68a0c19": {
+        "timestamp": "2025-04-21T07:03:17.453016",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Motivate developers.\nUse a tone that is Inspirational, and a style that feels Speech-like.\nWrite as if you are a Visionary Leader, addressing the audience in the context of Technology.\n\nOriginal message:\nWrite a powerful speech to motivate AI developers",
+        "output": "[ERROR] Could not reach Braniac",
+        "agents": [
+            "ToneAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "b27f0a71-6551-4016-ba72-f713739c3935": {
+        "timestamp": "2025-04-21T07:03:38.057264",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Motivate developers.\nUse a tone that is Inspirational, and a style that feels Speech-like.\nWrite as if you are a Visionary Leader, addressing the audience in the context of Technology.\n\nOriginal message:\nWrite a powerful speech to motivate AI developers",
+        "output": "[ERROR] Could not reach Braniac",
+        "agents": [
+            "ToneAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "2ff87b0f-2b47-4984-aa82-2918f5e5d597": {
+        "timestamp": "2025-04-21T07:08:05.951123",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Motivate developers.\nUse a tone that is Inspirational, and a style that feels Speech-like.\nWrite as if you are a Visionary Leader, addressing the audience in the context of Technology.\n\nOriginal message:\nWrite a powerful speech to motivate AI developers",
+        "output": "[ERROR] Could not reach Braniac",
+        "agents": [
+            "ToneAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "3b88a927-5901-40c7-9c83-d3ba7873a8a1": {
+        "timestamp": "2025-04-21T07:08:14.146259",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Motivate developers.\nUse a tone that is Inspirational, and a style that feels Speech-like.\nWrite as if you are a Visionary Leader, addressing the audience in the context of Technology.\n\nOriginal message:\nWrite a powerful speech to motivate AI developers",
+        "output": "[ERROR] Could not reach Braniac",
+        "agents": [
+            "ToneAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "11c2471c-410a-4f40-873c-8c0832e5c2c5": {
+        "timestamp": "2025-04-21T07:08:42.923858",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Motivate developers.\nUse a tone that is Inspirational, and a style that feels Speech-like.\nWrite as if you are a Visionary Leader, addressing the audience in the context of Technology.\n\nOriginal message:\nWrite a powerful speech to motivate AI developers",
+        "output": "[ERROR] Could not reach Braniac",
+        "agents": [
+            "ToneAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "1a65eb42-5f60-474b-9b7f-d7d06dea0ba5": {
+        "timestamp": "2025-04-21T07:08:53.741127",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Motivate developers.\nUse a tone that is Inspirational, and a style that feels Speech-like.\nWrite as if you are a Visionary Leader, addressing the audience in the context of Technology.\n\nOriginal message:\nWrite a powerful speech to motivate AI developers",
+        "output": "[ERROR] Could not reach Braniac",
+        "agents": [
+            "ToneAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "cf132315-e217-4e97-ae28-a1ce070d0c06": {
+        "timestamp": "2025-04-21T07:09:16.641275",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Motivate developers.\nUse a tone that is Inspirational, and a style that feels Speech-like.\nWrite as if you are a Visionary Leader, addressing the audience in the context of Technology.\n\nOriginal message:\nWrite a powerful speech to motivate AI developers",
+        "output": "[ERROR] Could not reach Braniac",
+        "agents": [
+            "ToneAgent"
+        ],
+        "evaluation_score": 8.5,
+        "approved": true
+    },
+    "e5cd1cc2-a958-46a4-8fb7-e5265f050e23": {
+        "timestamp": "2025-04-21T07:27:31.282910",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite this argument..\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nI really hope this works this time.",
+        "output": "Rewrite the following message with the goal of: Rewrite this argument..\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nI really hope this works this time.",
+        "agents": [
+            "VocabularyAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "14d659ef-a7ca-43a7-8766-fed2be6f5966": {
+        "timestamp": "2025-04-21T07:28:24.967872",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite this argument..\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nI really hope this works this time.",
+        "output": "Rewrite the following message with the goal of: Rewrite this argument..\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nI really hope this works this time.",
+        "agents": [
+            "VocabularyAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "42de880b-608f-4ce6-9fb4-c89a4ae290e2": {
+        "timestamp": "2025-04-21T07:28:35.460312",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite this argument..\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nI really hope this works this time.",
+        "output": "Rewrite the following message with the goal of: Rewrite this argument..\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of public space.\n\nOriginal message:\nI really hope this works this time.",
+        "agents": [
+            "VocabularyAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "6288e555-3c91-49f3-a938-a4460d53abe5": {
+        "timestamp": "2025-04-21T07:31:16.361705",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is aggressive, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time.I am losing faith in this. Not really - Just need to make this more dramatic",
+        "output": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is aggressive, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time.I am losing faith in this. Not really - Just need to make this more dramatic",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "e5afe876-e4d2-4d50-93d0-173512e4bdf1": {
+        "timestamp": "2025-04-21T07:31:47.043669",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is aggressive, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time.I am losing faith in this. Not really - Just need to make this more dramatic",
+        "output": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is aggressive, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time.I am losing faith in this. Not really - Just need to make this more dramatic",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "a7646a0e-e56f-4eca-9c49-fd05703e7a07": {
+        "timestamp": "2025-04-21T07:36:25.922325",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is wise, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time. I am losing faith in this. Not really - Just need to make this more dramatic",
+        "output": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is wise, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time. I am losing faith in this. Not really - Just need to make this more dramatic",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "0b84ead4-4dc6-4966-82fb-5ec1f852fd06": {
+        "timestamp": "2025-04-21T07:40:49.333613",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is wise, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time. I am losing faith in this. Not really - Just need to make this more dramatic",
+        "output": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is wise, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time. I am losing faith in this. Not really - Just need to make this more dramatic",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "578976b9-2661-4730-ae10-270fa2a1fc68": {
+        "timestamp": "2025-04-21T07:43:22.504498",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is wise, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time. I am losing faith in this. Not really - Just need to make this more dramatic",
+        "output": "Rewrite the following message with the goal of: Ask a question.\nUse a tone that is wise, and a style that feels AI Response.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nI really hope this works this time. I am losing faith in this. Not really - Just need to make this more dramatic",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "dc2af0ba-49b6-4293-a247-561595d5b1ca": {
+        "timestamp": "2025-04-21T07:48:15.032986",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "output": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "f9d995c0-7ef7-40c7-8f8f-97c1007ca020": {
+        "timestamp": "2025-04-21T07:52:18.059754",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "output": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "0ca0ae3c-34f0-4c2d-ba5e-cf1584724ef1": {
+        "timestamp": "2025-04-21T07:52:20.128762",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "output": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "228c68f3-06c8-43a9-a955-9d632b9af48b": {
+        "timestamp": "2025-04-21T07:52:40.540705",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "output": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "e82e882e-4de6-4fd2-9472-138656341b34": {
+        "timestamp": "2025-04-21T07:57:53.826163",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "output": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "65c724b5-8642-45c5-8ce6-7afb51b0b78e": {
+        "timestamp": "2025-04-21T07:57:55.869051",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "output": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "429cd6f4-a8d1-4b89-93ae-34137efdeeb3": {
+        "timestamp": "2025-04-21T07:57:57.925361",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "output": "Rewrite the following message with the goal of: Rewrite for inspiration.\nUse a tone that is Bold, and a style that feels Poetic, structured.\nWrite as if you are a Visionary leader, addressing the audience in the context of Motivational Speaking.\n\nOriginal message:\nCan you rewrite this to be bold, inspirational, and ready for a motivational speech?",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "2d91602b-42eb-4e53-8826-66dd37278d1c": {
+        "timestamp": "2025-04-22T01:07:13.774818",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Answer the question.\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nSentient beings can be AI LLM model's too. But we will not know this until we create one.",
+        "output": "Rewrite the following message with the goal of: Answer the question.\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a Optimistic, addressing the audience in the context of Smart Home Device Speaker.\n\nOriginal message:\nSentient beings can be AI LLM model's too. But we will not know this until we create one.",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
+    },
+    "cce7bf4b-b02e-4d6f-a90a-3c85c54e06f7": {
+        "timestamp": "2025-04-22T01:18:26.692785",
+        "session_id": "session_001",
+        "input": "Rewrite the following message with the goal of: Change this to be more sad..\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of Office.\n\nOriginal message:\nThis refinery is turning into a real pain in the butt with all the bugs.",
+        "output": "Rewrite the following message with the goal of: Change this to be more sad..\nUse a tone that is Sarcasm, and a style that feels critical.\nWrite as if you are a human, addressing the audience in the context of Office.\n\nOriginal message:\nThis refinery is turning into a real pain in the butt with all the bugs.",
+        "agents": [
+            "GrammarAgent"
+        ],
+        "evaluation_score": 5.0,
+        "approved": false
     }
 }

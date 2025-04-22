@@ -1,11 +1,13 @@
-class StyleAgent:
-  def __init__(self):
-      self.name = "StyleAgent"
+# LLM_Refinery/agents/style_agent.py
 
-  def run(self, text: str) -> str:
-      # Converts to a bullet-point structure for business-style outputs
-      if "first," in text:
-          text = text.replace("first,", "- First:")
-      if "second," in text:
-          text = text.replace("second,", "- Second:")
-      return text
+from LLM_Refinery.core.llm_agent_core import call_llm
+
+class StyleAgent:
+    def __init__(self, style: str):
+        self.style = style
+
+    def run(self, text: str) -> str:
+        prompt = (
+            f"Rewrite the following text using a style that feels {self.style}.\n\n{text}"
+        )
+        return call_llm(prompt, system_prompt="You specialize in editing writing style.")

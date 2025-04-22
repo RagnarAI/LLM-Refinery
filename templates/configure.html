@@ -2,7 +2,12 @@
 
 {% block content %}
 <h2>⚙️ Configure Agent Input</h2>
-<form method="post" action="/run">
+<form method="post" action="/run_pipeline">
+    <hr>
+    <div id="pipeline">
+      <!-- Agent output blocks will appear here -->
+    </div>
+    
     <label>Raw Prompt:</label><br>
     <textarea name="original_input" rows="4" cols="60" required></textarea><br><br>
 
@@ -22,5 +27,11 @@
     <input name="domain" required><br><br>
 
     <button type="submit">▶️ Run LLM Refinery</button>
-</form>
+<form 
+method="post" 
+action="/run_pipeline" 
+hx-post="/run_pipeline" 
+hx-target="#pipeline" 
+hx-swap="innerHTML">
+>
 {% endblock %}

@@ -3,16 +3,36 @@
 {% block content %}
 <h2>🔁 Live Pipeline Output</h2>
 
-{% if result %}
-    <h3>💡 Final Output</h3>
-    <pre>{{ result }}</pre>
+<!-- 🧠 Configuration Form -->
+<form 
+  hx-post="/run_pipeline"
+  hx-target="#output"
+  hx-swap="innerHTML"
+  method="post"
+>
+    <label>Raw Prompt:</label><br>
+    <textarea name="original_input" rows="3" cols="60" required></textarea><br><br>
 
-    <h3>📊 Evaluation</h3>
-    <pre>{{ evaluation }}</pre>
+    <label>Goal:</label><br>
+    <input name="goal" required><br><br>
 
-    <h3>🗣️ Proxy Feedback</h3>
-    <pre>{{ feedback }}</pre>
-{% else %}
-    <p>No output yet. Try submitting a new run on the <a href="/config">Config page</a>.</p>
-{% endif %}
+    <label>Tone:</label><br>
+    <input name="tone" required><br><br>
+
+    <label>Style:</label><br>
+    <input name="style" required><br><br>
+
+    <label>Persona:</label><br>
+    <input name="character" required><br><br>
+
+    <label>Domain:</label><br>
+    <input name="domain" required><br><br>
+
+    <button type="submit">▶️ Run LLM Refinery</button>
+</form>
+
+<!-- 📦 Output Section (HTMX injects here) -->
+<div id="output" class="pipeline-output">
+    <p>No output yet. Submit a prompt to see agent responses live.</p>
+</div>
 {% endblock %}
